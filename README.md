@@ -8,7 +8,8 @@ This is a full-stack application that predicts handwritten digits (0–9) using 
 - **Deployment**: Render.com
 
 ## 📸 Screenshot
-![App Screenshot](screenshot.png)
+<img src="screenshot.png" alt="MNIST App Screenshot" width="400" height="300">
+
 
 
 ---
