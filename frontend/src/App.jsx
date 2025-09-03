@@ -27,16 +27,20 @@ function App() {
     const formData = new FormData();
     formData.append("file", resBlob, "digit.png");
 
-    const res = await fetch(`${BASE_URL}/predict`, {
-      method: "POST",
-      body: formData,
-    });
-
-    setLoading(false);
-    const data = await res.json();
-    setPrediction(data.prediction);
-    setConfidence(data.confidence);
-  
+    try {
+      const res = await fetch(`${BASE_URL}/predict`, {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+      setPrediction(data.prediction);
+      setConfidence(data.confidence);
+    } catch (error) {
+      console.log("Error:", error);
+    }
+    finally{
+      setLoading(false);
+    }
   };
   
   return (
